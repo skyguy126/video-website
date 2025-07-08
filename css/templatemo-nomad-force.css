@@ -664,16 +664,6 @@ strong {
     padding-bottom: 10px;
   }
 
-  .hero {
-    height: calc(100vh - 70px);
-  }
-
-  .custom-video {
-    object-fit: cover;
-    width: 100vw;
-    height: calc(100vh - 70px);
-  }
-
   .section-padding {
     padding-top: 6rem;
     padding-bottom: 6rem;
