@@ -483,6 +483,44 @@ video.portfolio-image {
   object-fit: contain;
 }
 
+/* Video thumbnail with play button */
+.video-thumbnail-container {
+  position: relative;
+  display: block;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.play-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.play-button i {
+  font-size: 24px;
+  color: #000;
+  margin-left: 3px;
+}
+
 .news-image-hover {
   display: inline-block;
   position: relative;

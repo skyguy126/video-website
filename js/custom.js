@@ -39,4 +39,16 @@
     
   })(window.jQuery);
 
+  // VIDEO PLAY FUNCTION - Global scope
+  function playVideo() {
+      const thumbnail = document.getElementById('video-thumbnail');
+      const videoPlayer = document.getElementById('video-player');
+      
+      if (thumbnail && videoPlayer) {
+          thumbnail.style.display = 'none';
+          videoPlayer.style.display = 'block';
+          videoPlayer.play();
+      }
+  }
+
   

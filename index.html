@@ -215,11 +215,19 @@ https://templatemo.com/tm-567-nomad-force
 
                         <div class="col-lg-6 col-12">
                             <div class="portfolio-thumb mb-5" data-aos="fade-up">
-                                <video class="img-fluid portfolio-image" controls controlsList="nodownload" preload="none">
+                                <div class="video-thumbnail-container" id="video-thumbnail">
+                                    <img src="videos/thumb.jpg" class="img-fluid portfolio-image" alt="Video thumbnail">
+                                    <div class="play-button-overlay">
+                                        <button class="play-button" onclick="playVideo()">
+                                            <i class="bi bi-play-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <video class="img-fluid portfolio-image" id="video-player" controls controlsList="nodownload" preload="none" style="display: none;">
                                     <source src="videos/final.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                            </div> 
+                            </div>
 
                             <div class="portfolio-thumb" data-aos="fade-up">
                                 <img src="images/portfolio/pic_b.jpg" class="img-fluid portfolio-image" alt="">
