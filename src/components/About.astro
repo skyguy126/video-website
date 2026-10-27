@@ -1,0 +1,94 @@
+---
+import { TEAM } from '../data/site';
+import { withBase } from '../lib/paths';
+---
+
+<section class="section-padding pb-0" id="about">
+	<div class="container mb-5 pb-lg-5">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="mb-3" data-aos="fade-up">Let Us Tell Your Story</h2>
+			</div>
+
+			<div class="col-lg-6 col-12 mt-3 mb-lg-5">
+				<p class="me-4" data-aos="fade-up" data-aos-delay="300">
+					Backed by experience, driven by creativity. We're inspired by real stories—told through a
+					cinematic lens. From pre-shoot to post-production, we work tirelessly to bring{' '}
+					<strong>your</strong> vision to life.
+				</p>
+			</div>
+
+			<div class="col-lg-6 col-12 mt-lg-3 mb-lg-5">
+				<p data-aos="fade-up" data-aos-delay="500">
+					The sky is&#8212;literally&#8212;the limit. Our team offers a boutique, hands-on experience:
+					location planning, storyboarding, photo, video, and editing. We don't just capture your story, we
+					make it a journey to remember.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3 col-12 p-0">
+				<img src={withBase('/images/ring_compressed.jpg')} class="img-fluid about-image" alt="" />
+			</div>
+
+			<div class="col-lg-3 col-12 bg-dark">
+				<div class="d-flex flex-column flex-wrap justify-content-center h-100 py-5 px-4 pt-lg-4 pb-lg-0">
+					<h3 class="text-white mb-3" data-aos="fade-up">Your day. Your story. Our lens.</h3>
+					<p class="text-secondary-white-color" data-aos="fade-up">
+						Turning moments into memories. Beautifully.
+					</p>
+					<div class="mt-3 custom-links">
+						<a
+							href="#portfolio"
+							class="text-white custom-link"
+							data-aos="zoom-in"
+							data-aos-delay="100"
+						>
+							View Our Portfolio
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-12 p-0">
+				<section id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						{
+							TEAM.map((member) => (
+								<div class:list={['carousel-item', { active: member.active }]}>
+									<img src={withBase(member.image)} class="img-fluid team-image" alt="" />
+									<div class:list={['team-thumb', member.thumbClass]}>
+										<h3 class="text-white mb-0">{member.name}</h3>
+										<p class="text-secondary-white-color mb-0">{member.role}</p>
+									</div>
+								</div>
+							))
+						}
+					</div>
+
+					<button
+						class="carousel-control-prev"
+						type="button"
+						data-bs-target="#myCarousel"
+						data-bs-slide="prev"
+					>
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button
+						class="carousel-control-next"
+						type="button"
+						data-bs-target="#myCarousel"
+						data-bs-slide="next"
+					>
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</section>
+			</div>
+		</div>
+	</div>
+</section>

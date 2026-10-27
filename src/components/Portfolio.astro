@@ -1,0 +1,62 @@
+---
+import { PORTFOLIO } from '../data/site';
+import { withBase } from '../lib/paths';
+
+const leftImages = PORTFOLIO.images.filter((image) => image.column === 'left');
+const rightImages = PORTFOLIO.images.filter((image) => image.column === 'right');
+---
+
+<section class="section-padding" id="portfolio">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="mb-5 text-center" data-aos="fade-up">Portfolio</h2>
+			</div>
+
+			<div class="col-lg-6 col-12">
+				<div class="portfolio-thumb mb-5" data-aos="fade-up">
+					<div class="ratio ratio-16x9">
+						<iframe
+							src={PORTFOLIO.youtubeEmbedUrl}
+							title="YouTube video"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+						></iframe>
+					</div>
+					<video
+						class="img-fluid portfolio-image"
+						id="video-player"
+						controls
+						controlsList="nodownload"
+						preload="metadata"
+						style="display: none;"
+					>
+						<source src={withBase('/videos/final.mp4')} type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+				</div>
+
+				{
+					leftImages.map((image) => (
+						<div class="portfolio-thumb" data-aos="fade-up">
+							<img src={withBase(image.src)} class="img-fluid portfolio-image" alt="" />
+						</div>
+					))
+				}
+			</div>
+
+			<div class="col-lg-6 col-12">
+				{
+					rightImages.map((image) => (
+						<div
+							class:list={['portfolio-thumb', image.className]}
+							data-aos="fade-up"
+						>
+							<img src={withBase(image.src)} class="img-fluid portfolio-image" alt="" />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
