@@ -92,7 +92,7 @@ function playVideo() {
 }
 
 export function initSite() {
-	window.AOS?.init();
+	window.AOS?.init({ once: true });
 	window.playVideo = playVideo;
 	initNavLinks();
 	initSmoothScroll();
