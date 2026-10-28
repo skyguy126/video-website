@@ -7,11 +7,21 @@ import { SITE } from '../data/site';
 		<div class="row">
 			<div class="col-12">
 				<div
-					class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center text-md-start"
+					class="d-flex flex-column justify-content-center align-items-center text-center gap-2"
 				>
 					<a href={`mailto:${SITE.email}`} class="custom-link">{SITE.email}</a>
+					<p class="copyright-text mb-0">
+						&copy; <span data-copyright-year>{new Date().getFullYear()}</span> {SITE.name}
+					</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </footer>
+
+<script>
+	const yearEl = document.querySelector('[data-copyright-year]');
+	if (yearEl) {
+		yearEl.textContent = String(new Date().getFullYear());
+	}
+</script>
