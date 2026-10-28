@@ -375,6 +375,103 @@ strong {
   text-align: center;
 }
 
+.scrollCue {
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  bottom: max(1.75rem, env(safe-area-inset-bottom, 0px) + 1.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: rgba(255, 255, 255, 0.72);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.scrollCue__mouse {
+  position: relative;
+  display: block;
+  width: 1.2rem;
+  height: 1.85rem;
+  border: 1px solid currentColor;
+  border-radius: 0.7rem;
+}
+
+.scrollCue__wheel {
+  position: absolute;
+  top: 0.3rem;
+  left: 50%;
+  width: 0.16rem;
+  height: 0.32rem;
+  border-radius: 999px;
+  background: currentColor;
+  transform: translateX(-50%);
+  animation: scrollCue-wheel 1.8s ease-in-out infinite;
+}
+
+.scrollCue__chevron {
+  display: block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg) translateY(-0.12rem);
+  animation: scrollCue-chevron 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollCue-wheel {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate(-50%, 0);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-50%, 0.35rem);
+  }
+}
+
+@keyframes scrollCue-chevron {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: rotate(45deg) translateY(-0.12rem);
+  }
+  45% {
+    opacity: 1;
+    transform: rotate(45deg) translate(0.12rem, 0.12rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollCue__wheel,
+  .scrollCue__chevron {
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .scrollCue {
+    bottom: max(1.25rem, env(safe-area-inset-bottom, 0px) + 0.85rem);
+  }
+
+  .scrollCue__mouse {
+    width: 1.05rem;
+    height: 1.65rem;
+  }
+
+  .scrollCue__wheel {
+    width: 0.14rem;
+    height: 0.28rem;
+  }
+
+  .scrollCue__chevron {
+    width: 0.48rem;
+    height: 0.48rem;
+  }
+}
+
 /*---------------------------------------
   ABOUT & TEAM MEMBERS               
 -----------------------------------------*/

@@ -36,10 +36,10 @@ function smoothScrollTo(hash: string) {
 	const target = document.querySelector(hash);
 	if (!(target instanceof HTMLElement)) return;
 
+	setActiveNav(hash);
+
 	const top = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
 	window.scrollTo({ top, behavior: 'smooth' });
-
-	window.setTimeout(() => setActiveNav(hash), 1000);
 }
 
 function initNavLinks() {
