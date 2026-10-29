@@ -1,6 +1,6 @@
 # SkyFrame Studios
 
-Static site for [skyframestudios.com](https://skyframestudios.com), built with [Astro](https://astro.build).
+Static site for [skyframestudio.org](https://skyframestudio.org), built with [Astro](https://astro.build).
 
 ## Requirements
 
@@ -49,17 +49,17 @@ CI never commits build output back to the repository.
 
 ## Deployment configuration
 
-Hosting target: **GitHub Pages** via Actions (same provider as the previous static root deploy). Custom domain: `skyframestudios.com` (`public/CNAME`).
+Hosting target: **GitHub Pages** via Actions (same provider as the previous static root deploy). Custom domain: `skyframestudio.org` (`public/CNAME`).
 
 ### Manual GitHub settings (required once)
 
 1. **Settings → Pages → Build and deployment → Source**: choose **GitHub Actions** (do not use “Deploy from a branch” / `/docs` or `/ (root)`).
 2. If the repository is private, ensure the org/user plan allows GitHub Pages for private repositories.
 3. **Custom domain**:
-   - Keep `public/CNAME` as `skyframestudios.com` (included in the build artifact).
-   - In **Settings → Pages → Custom domain**, set `skyframestudios.com` and enable HTTPS once DNS validates.
+   - Keep `public/CNAME` as `skyframestudio.org` (included in the build artifact).
+   - In **Settings → Pages → Custom domain**, set `skyframestudio.org` and enable HTTPS once DNS validates.
    - Point DNS at GitHub Pages (A/AAAA for apex, or CNAME for `www`) per [GitHub’s custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
-4. `astro.config.mjs` uses `site: 'https://skyframestudios.com'` and default `base: '/'` for the custom domain. Asset URLs go through `withBase()` so a temporary project-pages base works if needed.
+4. `astro.config.mjs` uses `site: 'https://skyframestudio.org'` and default `base: '/'` for the custom domain. Asset URLs go through `withBase()` so a temporary project-pages base works if needed.
 
 ### Project URL without custom domain
 

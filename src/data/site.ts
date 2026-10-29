@@ -1,8 +1,8 @@
 export const SITE = {
 	name: 'SkyFrame Studios',
 	description: 'Bay Area photography and videography',
-	email: 'info@skyframestudios.com',
-	url: 'https://skyframestudios.com',
+	email: 'info@skyframestudio.org',
+	url: 'https://skyframestudio.org',
 } as const;
 
 export const NAV_LINKS = [
