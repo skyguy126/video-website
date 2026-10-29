@@ -31,7 +31,7 @@ src/
 ├── lib/          # Client interactivity (nav, scroll, AOS)
 ├── pages/        # Routes (index)
 └── styles/       # Site CSS (Nomad Force theme)
-public/           # Static assets (css vendor, fonts, images, videos, CNAME)
+public/           # Static assets (css/js vendor, CNAME); media served from R2
 dist/             # Build output (gitignored; produced by CI)
 ```
 
@@ -80,6 +80,7 @@ Remove or empty `public/CNAME` while using that mode, then restore the custom-do
 
 ## Notes
 
-- Hero background video: `public/videos/website_video.mp4`
+- Media (images, videos, icon fonts): `https://media.munixnet.org/skyframestudio/…` (Cloudflare R2 bucket `media`)
+- Hero background video: `videos/website_video.mp4` under that prefix
 - Portfolio embed: YouTube (`src/data/site.ts`)
-- No server-side auth or private media; all `public/` assets are publicly served
+- No server-side auth or private media; R2/CDN assets are publicly served

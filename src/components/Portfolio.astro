@@ -1,6 +1,6 @@
 ---
 import { PORTFOLIO } from '../data/site';
-import { withBase } from '../lib/paths';
+import { mediaUrl } from '../lib/paths';
 
 const leftImages = PORTFOLIO.images.filter((image) => image.column === 'left');
 const rightImages = PORTFOLIO.images.filter((image) => image.column === 'right');
@@ -31,7 +31,7 @@ const rightImages = PORTFOLIO.images.filter((image) => image.column === 'right')
 						preload="metadata"
 						style="display: none;"
 					>
-						<source src={withBase('/videos/final.mp4')} type="video/mp4" />
+						<source src={mediaUrl('/videos/final.mp4')} type="video/mp4" />
 						Your browser does not support the video tag.
 					</video>
 				</div>
@@ -39,7 +39,7 @@ const rightImages = PORTFOLIO.images.filter((image) => image.column === 'right')
 				{
 					leftImages.map((image) => (
 						<div class="portfolio-thumb" data-aos="fade-up">
-							<img src={withBase(image.src)} class="img-fluid portfolio-image" alt="" />
+							<img src={mediaUrl(image.src)} class="img-fluid portfolio-image" alt="" />
 						</div>
 					))
 				}
@@ -52,7 +52,7 @@ const rightImages = PORTFOLIO.images.filter((image) => image.column === 'right')
 							class:list={['portfolio-thumb', image.className]}
 							data-aos="fade-up"
 						>
-							<img src={withBase(image.src)} class="img-fluid portfolio-image" alt="" />
+							<img src={mediaUrl(image.src)} class="img-fluid portfolio-image" alt="" />
 						</div>
 					))
 				}

@@ -1,6 +1,6 @@
 ---
 import { TEAM } from '../data/site';
-import { withBase } from '../lib/paths';
+import { mediaUrl } from '../lib/paths';
 ---
 
 <section class="section-padding pb-0" id="about">
@@ -31,7 +31,7 @@ import { withBase } from '../lib/paths';
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-3 col-12 p-0">
-				<img src={withBase('/images/ring_compressed.jpg')} class="img-fluid about-image" alt="" />
+				<img src={mediaUrl('/images/ring_compressed.jpg')} class="img-fluid about-image" alt="" />
 			</div>
 
 			<div class="col-lg-3 col-12 bg-dark">
@@ -59,7 +59,7 @@ import { withBase } from '../lib/paths';
 						{
 							TEAM.map((member) => (
 								<div class:list={['carousel-item', { active: member.active }]}>
-									<img src={withBase(member.image)} class="img-fluid team-image" alt="" />
+									<img src={mediaUrl(member.image)} class="img-fluid team-image" alt="" />
 									<div class:list={['team-thumb', member.thumbClass]}>
 										<h3 class="text-white mb-0">{member.name}</h3>
 										<p class="text-secondary-white-color mb-0">{member.role}</p>
